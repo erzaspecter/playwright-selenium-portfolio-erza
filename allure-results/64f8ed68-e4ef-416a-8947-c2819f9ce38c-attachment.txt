@@ -1,0 +1,2 @@
+⚠️ Got Cloudflare block (403) - API might be protected
+✅ Invalid login properly rejected

@@ -66,21 +66,21 @@
   },
   "suites": [
     {
-      "title": "tests\\auth-api.spec.js",
-      "file": "tests/auth-api.spec.js",
+      "title": "tests\\error-handling.spec.js",
+      "file": "tests/error-handling.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Authentication API Testing",
-          "file": "tests/auth-api.spec.js",
+          "title": "Error Handling & Negative Tests",
+          "file": "tests/error-handling.spec.js",
           "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "Login with valid credentials",
-              "ok": false,
+              "title": "GET non-existent resource should return 404",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -91,48 +91,28 @@
                   "projectName": "API Tests",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 20,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 468,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n    at C:\\Users\\erza.akbar\\Documents\\playwright-portfolio-erza\\projects\\02-api-testing\\tests\\auth-api.spec.js:22:20",
-                        "location": {
-                          "file": "C:\\Users\\erza.akbar\\Documents\\playwright-portfolio-erza\\projects\\02-api-testing\\tests\\auth-api.spec.js",
-                          "column": 20,
-                          "line": 22
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 20 |\u001b[39m     }\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     expect(status)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m     expect(body)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m'token'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful, token received:'\u001b[39m\u001b[33m,\u001b[39m body\u001b[33m.\u001b[39mtoken)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
+                      "status": "passed",
+                      "duration": 166,
+                      "errors": [],
+                      "stdout": [
                         {
-                          "location": {
-                            "file": "C:\\Users\\erza.akbar\\Documents\\playwright-portfolio-erza\\projects\\02-api-testing\\tests\\auth-api.spec.js",
-                            "column": 20,
-                            "line": 22
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n\n\u001b[0m \u001b[90m 20 |\u001b[39m     }\n \u001b[90m 21 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     expect(status)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m     expect(body)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m'token'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Login successful, token received:'\u001b[39m\u001b[33m,\u001b[39m body\u001b[33m.\u001b[39mtoken)\u001b[33m;\u001b[39m\n \u001b[90m 25 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\erza.akbar\\Documents\\playwright-portfolio-erza\\projects\\02-api-testing\\tests\\auth-api.spec.js:22:20\u001b[22m"
+                          "text": "✅ 404 returned for non-existent resource\n"
                         }
                       ],
-                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-11T07:17:51.146Z",
+                      "startTime": "2026-03-11T07:27:40.759Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "C:\\Users\\erza.akbar\\Documents\\playwright-portfolio-erza\\projects\\02-api-testing\\tests\\auth-api.spec.js",
-                        "column": 20,
-                        "line": 22
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "ee05da26920ab975126f-bd6664cbb0d5dbcf5ba4",
-              "file": "tests/auth-api.spec.js",
+              "id": "b11304a68273ca7c9e0b-e03f5253e8c822c6dc3f",
+              "file": "tests/error-handling.spec.js",
               "line": 5,
               "column": 3
             }
@@ -143,11 +123,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-11T07:17:48.257Z",
-    "duration": 3429.0379999999423,
-    "expected": 0,
+    "startTime": "2026-03-11T07:27:38.032Z",
+    "duration": 2947.8349999999627,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
