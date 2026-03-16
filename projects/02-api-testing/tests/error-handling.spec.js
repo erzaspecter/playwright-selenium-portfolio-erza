@@ -39,7 +39,7 @@ test.describe('Error Handling & Negative Tests', () => {
       const endTime = Date.now();
       const duration = endTime - startTime;
       
-      expect(error.message).toContain('timeout');
+      expect(error.message.toLowerCase()).toContain('timeout');
       expect(duration).toBeLessThan(3000);
       
       console.log(`✅ Timeout properly handled in ${duration}ms`);
