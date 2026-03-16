@@ -1,5 +1,6 @@
 // tests/users-api.spec.js
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
+
 const ApiHelper = require('../helpers/api-helper');
 const DataGenerator = require('../helpers/data-generator');
 
