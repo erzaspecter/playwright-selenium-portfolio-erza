@@ -23,5 +23,5 @@ class LoginPage {
   }
 }
 
-// ✅ EXPORT yang benar untuk Node.js/Playwright
-module.exports = { LoginPage }  // tambah kurung kurawal
+// Export the class as the module default so `require()` returns the constructor
+module.exports = LoginPage

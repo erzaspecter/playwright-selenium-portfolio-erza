@@ -18,4 +18,5 @@ class InventoryPage {
   }
 }
 
-module.exports = { InventoryPage }  // ✅ tambah kurung kurawal
+// Export the class as the module default so `require()` returns the constructor
+module.exports = InventoryPage
