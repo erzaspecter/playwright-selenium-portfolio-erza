@@ -9,14 +9,14 @@ export default defineConfig({
   reporter: 'html',
   
   projects: [
-    {
-      name: 'ui-saucelabs',
-      testDir: './01-saucelabs-project/tests',
-      use: {
-        ...devices['Desktop Chrome'],
-        baseURL: 'https://www.saucedemo.com'
-      },
-    },
+    // {
+    //   name: 'ui-saucelabs',
+    //   testDir: './01-saucelabs-project/tests',
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     baseURL: 'https://www.saucedemo.com'
+    //   },
+    // },
     {
       name: 'api-testing',
       testDir: './02-api-testing/tests',
