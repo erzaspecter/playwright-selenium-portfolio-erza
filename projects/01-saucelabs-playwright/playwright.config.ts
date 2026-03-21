@@ -11,7 +11,7 @@ export default defineConfig({
   projects: [
     {
       name: 'ui-saucelabs',
-      testDir: './tests',
+      testDir: './01-saucelabs-project/tests',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com'
@@ -19,7 +19,7 @@ export default defineConfig({
     },
     // {
     //   name: 'api-testing',
-    //   testDir: './02-api-testing/tests',
+    //   testDir: './tests',
     //   use: {
     //     baseURL: 'https://restful-booker.herokuapp.com'
     //   },
