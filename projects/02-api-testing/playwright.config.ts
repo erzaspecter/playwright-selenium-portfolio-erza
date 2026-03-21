@@ -19,7 +19,7 @@ export default defineConfig({
     // },
     {
       name: 'api-testing',
-      testDir: './02-api-testing/tests',
+      testDir: './tests',
       use: {
         baseURL: 'https://restful-booker.herokuapp.com'
       },
