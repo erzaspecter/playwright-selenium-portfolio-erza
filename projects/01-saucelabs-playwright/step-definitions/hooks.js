@@ -1,4 +1,3 @@
-// hooks.js
 const { BeforeAll, AfterAll, Before, After } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 
@@ -14,14 +13,15 @@ Before(async function () {
   // Jalankan sebelum tiap scenario
   console.log('📄 Creating new page...');
   const context = await global.browser.newContext();
+  this.context = context;  // ← Simpan context
   this.page = await context.newPage();
 });
 
 After(async function () {
   // Jalankan setelah tiap scenario
   console.log('✅ Scenario selesai');
-  if (this.page) {
-    await this.page.close();
+  if (this.context) {
+    await this.context.close();  // ← Tutup context, bukan hanya page
   }
 });
 

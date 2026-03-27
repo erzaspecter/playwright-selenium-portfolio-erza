@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 472755300
+              "duration": 224342000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1834910299
+              "duration": 3818367099
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 69764799
+              "duration": 78021200
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 366356800
+              "duration": 279051999
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3840799
+              "duration": 7032100
             }
           },
           {
@@ -74,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 13410100
+              "duration": 23642299
             }
           }
         ],
@@ -109,7 +109,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 438516300
+              "duration": 120296800
             }
           },
           {
@@ -122,7 +122,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 749049699
+              "duration": 3590710799
             }
           },
           {
@@ -135,7 +135,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 171822099
+              "duration": 214603100
             }
           },
           {
@@ -148,7 +148,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 594099
+              "duration": 376500
             }
           },
           {
@@ -161,7 +161,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12020199
+              "duration": 7760800
             }
           },
           {
@@ -173,8 +173,9 @@
               "location": "step-definitions\\login.steps.js:28"
             },
             "result": {
-              "status": "passed",
-              "duration": 8801400
+              "status": "failed",
+              "duration": 544200,
+              "error_message": "TypeError: InventoryPage is not a constructor\n    at World.<anonymous> (C:\\Users\\teuku\\playwright-selenium-portfolio-erza\\projects\\01-saucelabs-playwright\\step-definitions\\login.steps.js:30:25)"
             }
           },
           {
@@ -182,7 +183,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 13318600
+              "duration": 16535799
             }
           }
         ],

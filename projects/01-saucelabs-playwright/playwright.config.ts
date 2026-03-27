@@ -8,21 +8,17 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   
+  // ✅ Opsional: tentukan pattern file test
+  testMatch: /.*\.(spec|test)\.(js|ts)/,  // default sudah ini
+  
   projects: [
     {
       name: 'ui-saucelabs',
-      testDir: './01-saucelabs-project/tests',
+      testDir: './tests',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: 'https://www.saucedemo.com'
       },
     },
-    // {
-    //   name: 'api-testing',
-    //   testDir: './tests',
-    //   use: {
-    //     baseURL: 'https://restful-booker.herokuapp.com'
-    //   },
-    // },
   ],
 });
