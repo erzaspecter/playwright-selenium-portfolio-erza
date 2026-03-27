@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MODENA Energy Test Suite" parallel="false">
+    
+    <!-- ==================== LISTENERS ==================== -->
+    <listeners>
+        <listener class-name="com.modena.energy.listeners.TestListener"/>
+        <listener class-name="com.modena.energy.listeners.ExtentReportListener"/>
+    </listeners>
+    
+    <!-- ==================== TESTS ==================== -->
+    
+    <!-- Test: Energy Calculator -->
+    <test name="Energy Calculator Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.modena.energy.tests.calculator.EnergyCalculatorTests">
+                <methods>
+                    <include name="testCalculatorOpens"/>
+                    <include name="testEnergyCalculation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test: Consultation Form (akan diaktifkan nanti) -->
+    <!--
+    <test name="Consultation Form Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.modena.energy.tests.consultation.ConsultationFormTests"/>
+        </classes>
+    </test>
+    -->
+    
+    <!-- Test: Smoke Tests -->
+    <!--
+    <test name="Smoke Tests">
+        <parameter name="browser" value="chrome"/>
+        <packages>
+            <package name="com.modena.energy.tests.smoke.*"/>
+        </packages>
+    </test>
+    -->
+    
+    <!-- Test: Cross Browser (Firefox) -->
+    <!--
+    <test name="Firefox Tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.modena.energy.tests.calculator.EnergyCalculatorTests"/>
+        </classes>
+    </test>
+    -->
+    
+</suite>

@@ -1,0 +1,94 @@
+{
+    // ==================== JAVA CONFIGURATION ====================
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.autobuild.enabled": true,
+    "java.completion.enabled": true,
+    "java.completion.guessMethodArguments": "insertBestGuessedArguments",
+    // ==================== SOURCE PATHS ====================
+    "java.project.sourcePaths": [
+        "src/main/java",
+        "src/test/java"
+    ],
+    "java.project.resourcePaths": [
+        "src/main/resources",
+        "src/test/resources"
+    ],
+    // ==================== MAVEN CONFIGURATION ====================
+    "java.maven.downloadSources": true,
+    "java.maven.updateSnapshots": true,
+    "maven.view": "hierarchical",
+    "maven.terminal.useJavaHome": true,
+    // ==================== TEST CONFIGURATION ====================
+    "java.test.config": {
+        "name": "test-config",
+        "workingDirectory": "${workspaceFolder}",
+        "vmArgs": [
+            "-Dfile.encoding=UTF-8"
+        ],
+        "env": {
+            "BROWSER": "chrome",
+            "ENV": "dev"
+        }
+    },
+    "java.test.defaultConfig": "test-config",
+    // ==================== DEBUG CONFIGURATION ====================
+    "java.debug.settings.hotCodeReplace": "auto",
+    "java.debug.settings.enableRunDebugCodeLens": true,
+    // ==================== REFERENCE CONFIGURATION ====================
+    "java.referencesCodeLens.enabled": true,
+    "java.implementationsCodeLens.enabled": true,
+    // ==================== FILE EXCLUSIONS ====================
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/target": false,
+        "**/bin": true
+    },
+    // ==================== EDITOR CONFIGURATION ====================
+    "editor.formatOnSave": false, // ← Ubah ke false sementara
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
+        "source.fixAll": "never"
+    },
+    "files.autoSave": "off", // ← Ubah ke off sementara
+    "editor.formatOnPaste": false, // ← Tambahkan ini
+    // ==================== JAVA COMPLETION ====================
+    "java.completion.importOrder": [ // ← Tambahkan ini
+        "java",
+        "javax",
+        "org",
+        "com",
+        ""
+    ],
+    "java.completion.favoriteStaticMembers": [ // ← Tambahkan ini
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.Assertions.*",
+        "org.junit.jupiter.api.Assumptions.*",
+        "org.junit.jupiter.api.DynamicContainer.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*",
+        "org.testng.Assert.*",
+        "org.testng.AssertJUnit.*"
+    ],
+    // ==================== XML CONFIGURATION ====================
+    "xml.format.enabled": true,
+    "xml.validation.enabled": true,
+    // ==================== EXTENSIONS ====================
+    "redhat.telemetry.enabled": false,
+    "vscode.edgeDevTools.defaultUrl": "https://energy.modena.com/id_en",
+    // ==================== TERMINAL ====================
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.shellIntegration.enabled": true,
+    // ==================== FILE ASSOCIATIONS ====================
+    "files.associations": {
+        "*.properties": "properties",
+        "*.xml": "xml",
+        "testng*.xml": "xml"
+    },
+    "java.debug.settings.onBuildFailureProceed": true
+}
