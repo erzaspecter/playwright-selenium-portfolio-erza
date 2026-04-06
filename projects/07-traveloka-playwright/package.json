@@ -1,0 +1,26 @@
+{
+  "name": "01-saucelabs-project",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:bdd": "cucumber-js",
+    "test:bdd:smoke": "cucumber-js --tags @smoke",
+    "test:bdd:regression": "cucumber-js --tags @regression",
+    "test:bdd:dry": "cucumber-js --dry-run",
+    "report": "npx playwright show-report",
+    "report:cucumber": "open reports/cucumber-report.html"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@playwright/test": "^1.58.2",
+    "playwright": "^1.40.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

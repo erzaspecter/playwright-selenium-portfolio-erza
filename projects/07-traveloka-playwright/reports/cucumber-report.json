@@ -1,0 +1,201 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "checkout;complete-purchase-with-valid-data",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Complete purchase with valid data",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 224342000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am logged in",
+            "match": {
+              "location": "step-definitions\\checkout.steps.js:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3818367099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I have added \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "location": "step-definitions\\checkout.steps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 78021200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I proceed to checkout and submit info \"John\",\"Doe\",\"12345\"",
+            "match": {
+              "location": "step-definitions\\checkout.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 279051999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the order confirmation",
+            "match": {
+              "location": "step-definitions\\checkout.steps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7032100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 23642299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@checkout",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "checkout",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Checkout",
+    "tags": [],
+    "uri": "features\\checkout.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 120296800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on the login page",
+            "match": {
+              "location": "step-definitions\\login.steps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3590710799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I enter username \"standard_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "step-definitions\\login.steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 214603100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 376500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should be redirected to the inventory page",
+            "match": {
+              "location": "step-definitions\\login.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7760800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I should see the products list",
+            "match": {
+              "location": "step-definitions\\login.steps.js:28"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 544200,
+              "error_message": "TypeError: InventoryPage is not a constructor\n    at World.<anonymous> (C:\\Users\\teuku\\playwright-selenium-portfolio-erza\\projects\\01-saucelabs-playwright\\step-definitions\\login.steps.js:30:25)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 16535799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login functionality",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]
