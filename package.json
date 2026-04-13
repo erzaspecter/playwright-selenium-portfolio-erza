@@ -9,10 +9,15 @@
     "install:ui": "cd projects/01-saucelabs-project && npm install",
     "install:api": "cd projects/02-api-testing && npm install"
   },
-  "keywords": ["playwright", "selenium", "automation", "testing"],
+  "keywords": [
+    "playwright",
+    "selenium",
+    "automation",
+    "testing"
+  ],
   "author": "Erza",
   "license": "MIT",
   "devDependencies": {
-    
+    "cypress": "^15.13.1"
   }
 }
