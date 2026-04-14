@@ -48,6 +48,7 @@
                 <directory>src/test/resources</directory>
                 <includes>
                     <include>**/*.feature</include>
+                    <include>**/*.json</include>
                 </includes>
             </testResource>
         </testResources>
