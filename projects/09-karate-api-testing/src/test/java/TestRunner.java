@@ -14,9 +14,8 @@ public class TestRunner {
         return Karate.run("features/01-basic/post-request").relativeTo(getClass());
     }
 
-    // @Karate.Test
-    // Karate testAllBasic() {
-    //     // jalankan semua file dalam folder
-    //     return Karate.run("classpath:features/01-basic");
-    // }
+    @Karate.Test
+    Karate testJsonValidation() {
+        return Karate.run("features/02-json-validation/json-path").relativeTo(getClass());
+    }
 }
