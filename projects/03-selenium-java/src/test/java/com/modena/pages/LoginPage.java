@@ -1,29 +1,31 @@
-package com.erza.pages;
+package com.modena.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    private WebDriver driver;
+    WebDriver driver;
 
-    // Locators untuk Herokuapp Login
-    private By usernameField = By.id("username"); // Pakai 'username' (tanpa dash)
-    private By passwordField = By.id("password");
-    private By loginButton = By.cssSelector("button[type='submit']");
-    private By errorMessage = By.id("flash"); // Area pesan error/sukses di atas
+    @FindBy(id = "username")
+    WebElement usernameField;
+
+    @FindBy(id = "password")
+    WebElement passwordField;
+
+    @FindBy(css = "button[type='submit']")
+    WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public HomePage loginApplication(String user, String pass) {
-        driver.findElement(usernameField).sendKeys(user);
-        driver.findElement(passwordField).sendKeys(pass);
-        driver.findElement(loginButton).click();
+    public HomePage loginApplication(String username, String password) {
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+        loginButton.click();
         return new HomePage(driver);
-    }
-
-    public String getErrorMessage() {
-        return driver.findElement(errorMessage).getText();
     }
 }
