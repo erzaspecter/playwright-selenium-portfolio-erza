@@ -1,7 +1,3 @@
-//import ModenaHomePage, { modenaHomePage } from '../../support/pages/ModenaHomePage';
-
-// const ModenaHomePage = require('../support/pages/ModenaHomePage');
-// const { modenaHomePage } = require('../support/pages/ModenaHomePage');
 
 import ModenaHomePage from '../support/pages/ModenaHomePage.js';
 
@@ -43,20 +39,28 @@ describe('MODENA Energy - Homepage Tests', () => {
   it.only('Calculate Energy', function() {
     
     
-    cy.get('.lg\\:text-left > .hidden').scrollIntoView().should('be.visible');
-    cy.get('.lg\\:text-left > .hidden').click();
+    //cy.get('.lg\\:text-left > .hidden').scrollIntoView().should('be.visible');
+    cy.contains('button, a', 'Calculate Now').scrollIntoView().should('be.visible');
+    cy.contains('button, a', 'Calculate Now').click();
+    
+    //cy.get('.lg\\:text-left > .hidden').click();
     
        
     
-    cy.get('a.btn-home span.absolute').click();
-    cy.get('#select2-power_capacity_home-container').click();
+    //cy.get('a.btn-home span.absolute').click();
+    cy.get('a.btn-home').click();
+    //cy.get('#select2-power_capacity_home-container').click();
     cy.get('[name="electricity_bill_home"]').click();
     cy.get('[name="electricity_bill_home"]').type('8.000.000');
     cy.get('label:nth-child(2) div.float-left').click();
     cy.get('#select2-power_capacity_home-container').click();
     cy.get('.select2-results__option').contains('1300 VA').click();
     cy.get('a.next-step-home').click();
-    
-    
+
+    //cy.get('input.name').type('Erza Akbar');
+    cy.get('input[name="name_home"]').type('Erza Akbar');
+    cy.get('input[name="email_home"]').type('akbarerza3@gmail.com');
+    cy.get('input[name="phone_home"]').type('081280984758');
+    cy.get('#address-input-home').type('Jl. Merdeka No. 123, Jakarta');    
   });
 });
