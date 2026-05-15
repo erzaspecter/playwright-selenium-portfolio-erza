@@ -5,41 +5,43 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 1,  // Tambah retry untuk test lambat
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
-  
-  // ✅ TAMBAHKAN INI - Timeout global untuk setiap test
-  timeout: 120000,  // 2 menit (naik dari default 30 detik)
-  
+
+  timeout: 120000,
+
   use: {
-    headless: false,  // Kamu sudah punya ini
-    
-    // ✅ TAMBAHKAN INI - Timeout untuk setiap action
-    actionTimeout: 30000,      // 30 detik untuk setiap action (click, fill, dll)
-    navigationTimeout: 60000,  // 60 detik untuk navigasi halaman
-    
+    headless: false,
+    actionTimeout: 30000,
+    navigationTimeout: 60000,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
-  
-  // ✅ TAMBAHKAN INI - Expect timeout untuk assertions
+
   expect: {
-    timeout: 30000,  // 30 detik untuk expect().toBeVisible() dll
+    timeout: 30000,
   },
-  
+
   projects: [
     {
+      name: 'setup',
+      testMatch: /tests\/setup\/auth\.setup\.ts/,
+    },
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], storageState: 'storage/user.auth.json' },
+      dependencies: ['setup'],
     },
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'], storageState: 'storage/user.auth.json' },
+      dependencies: ['setup'],
     },
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'], storageState: 'storage/user.auth.json' },
+      dependencies: ['setup'],
     },
   ],
 });
