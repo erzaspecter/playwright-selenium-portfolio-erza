@@ -1,0 +1,12 @@
+{
+  "validUsers": [
+    { "username": "standard_user", "password": "secret_sauce", "shouldPass": true },
+    { "username": "problem_user", "password": "secret_sauce", "shouldPass": true },
+    { "username": "performance_glitch_user", "password": "secret_sauce", "shouldPass": true }
+  ],
+  "invalidUsers": [
+    { "username": "locked_out_user", "password": "secret_sauce", "shouldPass": false },
+    { "username": "standard_user", "password": "wrong_password", "shouldPass": false },
+    { "username": "", "password": "", "shouldPass": false }
+  ]
+}
