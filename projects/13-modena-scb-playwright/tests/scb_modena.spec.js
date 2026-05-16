@@ -4,6 +4,8 @@ const { generateProductSlug } = require('../utils/urlHelper');
 const LandingPage = require('../pages/LandingPage');
 const CartPage = require('../pages/CartPage');
 const { PRODUCTS } = require('../constants/products');
+const { SUBSCRIPTION_URL } = require('../constants/urls'); // ← import URL
+
 
 test.describe('Subscription Cart Tests', () => {
   
@@ -16,7 +18,7 @@ test.describe('Subscription Cart Tests', () => {
     const productSlug = generateProductSlug(product.name);
 
     // Langsung pakai '/' karena baseURL sudah mengarah ke halaman subscription
-    await page.goto('/');
+    await page.goto(SUBSCRIPTION_URL);
     await page.getByRole('link', { name: 'Our Products' }).click();
     
     await landingPage.goToProductDetail(product.id);
@@ -41,7 +43,7 @@ test.describe('Subscription Cart Tests', () => {
       PRODUCTS.RO_8115.id,
     ];
 
-    await page.goto('/');
+    await page.goto(SUBSCRIPTION_URL);
     
     for (let i = 0; i < productsId.length; i++) {
       await page.getByRole('link', { name: 'Our Products' }).click();
@@ -55,14 +57,15 @@ test.describe('Subscription Cart Tests', () => {
     const landingPage = new LandingPage(page);
     const cartPage = new CartPage(page);
 
-    await page.goto('/');
+    await page.goto(SUBSCRIPTION_URL);
     await page.getByRole('link', { name: 'Our Products' }).click();
     await landingPage.goToProductDetail(PRODUCTS.RO_5110_TEWH.id);
     await cartPage.clickAddSubscription();
     await cartPage.assertCartCount(1);
 
-    await cartPage.goToCart(); // perlu method ini di CartPage
-    await cartPage.removeFirstItem(); // perlu implementasi
+    await cartPage.goToCart();
+    await cartPage.removeFirstItem();
+    await cartPage.confirmDelete(); 
     await cartPage.assertCartEmpty(); // badge hilang atau '0'
   });
   

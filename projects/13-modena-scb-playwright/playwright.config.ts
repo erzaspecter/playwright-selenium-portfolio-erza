@@ -1,7 +1,7 @@
 // playwright.config.js
-import { defineConfig, devices } from '@playwright/test';
+const { defineConfig, devices } = require('@playwright/test');
 
-export default defineConfig({
+module.exports = defineConfig({
   timeout: 30000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -15,7 +15,7 @@ export default defineConfig({
       testDir: './tests',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://www.modena.com/seamless-go-subscription/id_en', // ← base URL
+        // baseURL tidak perlu diset, atau bisa dikosongkan
       },
     },
   ],

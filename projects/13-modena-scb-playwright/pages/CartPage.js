@@ -23,6 +23,27 @@ class CartPage {
   async assertCartBadgeVisible() {
     await expect(this.cartBadge).toBeVisible({ timeout: 5000 })
   }
+
+  async goToCart() {
+    await this.cartBadge.click()  }
+
+  async goToCheckout() {
+    await this.page.getByRole('link', { name: 'View Subscription Status' }).click();
+  }
+
+  async removeFirstItem() {
+    // Implementasi untuk menghapus item pertama dari cart
+    await this.page.getByRole('button', { name: 'remove' }).first().click();
+  }
+  async confirmDelete() {
+    // Klik tombol dengan teks "Delete"
+    await this.page.getByRole('button', { name: 'Delete' }).click();
+  }
+
+  async assertCartEmpty() {
+    await expect(this.cartBadge).toBeHidden({ timeout: 5000 })
+  }
+
 }
 
 module.exports = CartPage
