@@ -1,23 +1,52 @@
-name: Playwright Tests
+name: Project 14 - Fullstack Webapp CI
+
 on:
   push:
-    branches: [ main, master ]
+    branches: [main]
+    paths:
+      - 'projects/14-fullstack-webapp-ci-cd/**'
+      - '.github/workflows/playwright.yml'
   pull_request:
-    branches: [ main, master ]
+    branches: [main]
+    paths:
+      - 'projects/14-fullstack-webapp-ci-cd/**'
+      - '.github/workflows/playwright.yml'
+
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        project: [01-saucelabs-playwright]
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-      - name: Install dependencies
+          node-version: 20
+
+      - name: Install frontend dependencies
+        working-directory: projects/14-fullstack-webapp-ci-cd/frontend
         run: npm ci
-        working-directory: projects/${{ matrix.project }}
-      - name: Run tests
-        run: npx playwright test
-        working-directory: projects/${{ matrix.project }}
+
+      - name: Build frontend
+        working-directory: projects/14-fullstack-webapp-ci-cd/frontend
+        run: npm run build
+
+      - name: Install test dependencies
+        working-directory: projects/14-fullstack-webapp-ci-cd/tests
+        run: npm ci
+
+      - name: Install Playwright browser
+        working-directory: projects/14-fullstack-webapp-ci-cd/tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Start frontend server
+        working-directory: projects/14-fullstack-webapp-ci-cd/frontend
+        run: npm run dev &
+
+      - name: Wait for frontend
+        run: npx wait-on http://localhost:3000
+
+      - name: Run Playwright tests
+        working-directory: projects/14-fullstack-webapp-ci-cd/tests
+        run: npx playwright test --project=chromium
