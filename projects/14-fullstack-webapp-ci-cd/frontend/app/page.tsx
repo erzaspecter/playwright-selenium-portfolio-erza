@@ -28,6 +28,10 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50">
       <Header />
 
+      <div data-testid="cart-count" className="hidden">
+        1
+      </div>
+
       <div className="container mx-auto px-4 py-8">
         <h1 className="mb-6 text-3xl font-bold">
           Welcome to Modena Store

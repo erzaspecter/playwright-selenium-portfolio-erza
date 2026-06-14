@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 type Product = {
   id: number
   name: string
@@ -12,13 +14,13 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 border">
-      <h2 className="text-xl font-semibold mb-2">
-        {product.name}
-      </h2>
+      <Link href={`/products/${product.id}`}>
+        <h2 className="text-xl font-semibold mb-2 cursor-pointer">
+          {product.name}
+        </h2>
+      </Link>
 
-      <p className="text-gray-600 mb-2">
-        {product.category}
-      </p>
+      <p className="text-gray-600 mb-2">{product.category}</p>
 
       <p className="text-green-600 font-bold text-lg mb-4">
         Rp {product.price.toLocaleString('id-ID')}
