@@ -12,7 +12,8 @@ export default defineConfig({
   timeout: 120000,
 
   use: {
-    headless: false,
+    baseURL: 'https://opensource-demo.orangehrmlive.com',
+    headless: true,
     actionTimeout: 30000,
     navigationTimeout: 60000,
     trace: 'on-first-retry',
